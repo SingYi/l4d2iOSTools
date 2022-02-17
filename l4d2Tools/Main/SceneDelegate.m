@@ -6,8 +6,11 @@
 //
 
 #import "SceneDelegate.h"
+#import "LDNavigationController.h"
+#import "LDRootViewController.h"
 
 @interface SceneDelegate ()
+
 
 @end
 
@@ -18,6 +21,18 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    if (scene) {
+        self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
+        self.window.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+        LDNavigationController *nav = [[LDNavigationController alloc] initWithRootViewController:[LDRootViewController new]];
+        self.window.rootViewController = nav;
+        [self.window makeKeyAndVisible];
+    }
+    
+    
+    
+    
 }
 
 

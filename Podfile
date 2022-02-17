@@ -7,6 +7,7 @@ target 'l4d2Tools' do
 
   # Pods for l4d2Tools
   
-  pod 'CocoaAsyncSocket', '~> 7.6.5'
+  pod 'CocoaAsyncSocket', '~> 7.6.5',:inhibit_warnings => true
+  pod 'Masonry', '~> 1.1.0',:inhibit_warnings => true
 
 end
