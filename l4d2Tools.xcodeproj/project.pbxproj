@@ -15,6 +15,11 @@
 		0461229D27BDEE36003C93C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461229C27BDEE36003C93C1 /* main.m */; };
 		046122A927BDF1F5003C93C1 /* LDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122A827BDF1F5003C93C1 /* LDNavigationController.m */; };
 		046122AC27BDF37C003C93C1 /* LDRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122AB27BDF37C003C93C1 /* LDRootViewController.m */; };
+		046122B027BE1ABA003C93C1 /* LDServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122AF27BE1ABA003C93C1 /* LDServerModel.m */; };
+		046122B327BE1B3C003C93C1 /* LDPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122B227BE1B3C003C93C1 /* LDPlayerModel.m */; };
+		046122B727BE1D18003C93C1 /* LDUDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122B627BE1D17003C93C1 /* LDUDPManager.m */; };
+		046122BA27BE28E8003C93C1 /* LDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122B927BE28E8003C93C1 /* LDDataManager.m */; };
+		046122BD27BE4BE3003C93C1 /* LDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122BC27BE4BE3003C93C1 /* LDTableViewCell.m */; };
 		93B086A3E9A9C4E1698DAD39 /* Pods_l4d2Tools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,16 @@
 		046122A827BDF1F5003C93C1 /* LDNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDNavigationController.m; sourceTree = "<group>"; };
 		046122AA27BDF37C003C93C1 /* LDRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDRootViewController.h; sourceTree = "<group>"; };
 		046122AB27BDF37C003C93C1 /* LDRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDRootViewController.m; sourceTree = "<group>"; };
+		046122AE27BE1ABA003C93C1 /* LDServerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDServerModel.h; sourceTree = "<group>"; };
+		046122AF27BE1ABA003C93C1 /* LDServerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDServerModel.m; sourceTree = "<group>"; };
+		046122B127BE1B3C003C93C1 /* LDPlayerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDPlayerModel.h; sourceTree = "<group>"; };
+		046122B227BE1B3C003C93C1 /* LDPlayerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDPlayerModel.m; sourceTree = "<group>"; };
+		046122B527BE1D17003C93C1 /* LDUDPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDUDPManager.h; sourceTree = "<group>"; };
+		046122B627BE1D17003C93C1 /* LDUDPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDUDPManager.m; sourceTree = "<group>"; };
+		046122B827BE28E8003C93C1 /* LDDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDDataManager.h; sourceTree = "<group>"; };
+		046122B927BE28E8003C93C1 /* LDDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDDataManager.m; sourceTree = "<group>"; };
+		046122BB27BE4BE3003C93C1 /* LDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDTableViewCell.h; sourceTree = "<group>"; };
+		046122BC27BE4BE3003C93C1 /* LDTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDTableViewCell.m; sourceTree = "<group>"; };
 		1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_l4d2Tools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		785D581EE18CEA5CF8BCFB33 /* Pods-l4d2Tools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-l4d2Tools.release.xcconfig"; path = "Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools.release.xcconfig"; sourceTree = "<group>"; };
 		D9CB15B88F13258F46D289F0 /* Pods-l4d2Tools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-l4d2Tools.debug.xcconfig"; path = "Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +119,8 @@
 		046122A527BDF1C0003C93C1 /* Script */ = {
 			isa = PBXGroup;
 			children = (
+				046122B427BE1CF4003C93C1 /* Contrlller */,
+				046122AD27BE1AA0003C93C1 /* Model */,
 				046122A627BDF1D1003C93C1 /* UI */,
 			);
 			path = Script;
@@ -116,8 +133,32 @@
 				046122A827BDF1F5003C93C1 /* LDNavigationController.m */,
 				046122AA27BDF37C003C93C1 /* LDRootViewController.h */,
 				046122AB27BDF37C003C93C1 /* LDRootViewController.m */,
+				046122BB27BE4BE3003C93C1 /* LDTableViewCell.h */,
+				046122BC27BE4BE3003C93C1 /* LDTableViewCell.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		046122AD27BE1AA0003C93C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				046122AE27BE1ABA003C93C1 /* LDServerModel.h */,
+				046122AF27BE1ABA003C93C1 /* LDServerModel.m */,
+				046122B127BE1B3C003C93C1 /* LDPlayerModel.h */,
+				046122B227BE1B3C003C93C1 /* LDPlayerModel.m */,
+				046122B827BE28E8003C93C1 /* LDDataManager.h */,
+				046122B927BE28E8003C93C1 /* LDDataManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		046122B427BE1CF4003C93C1 /* Contrlller */ = {
+			isa = PBXGroup;
+			children = (
+				046122B527BE1D17003C93C1 /* LDUDPManager.h */,
+				046122B627BE1D17003C93C1 /* LDUDPManager.m */,
+			);
+			path = Contrlller;
 			sourceTree = "<group>";
 		};
 		35033B8C4DF9050939481855 /* Frameworks */ = {
@@ -251,10 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046122B327BE1B3C003C93C1 /* LDPlayerModel.m in Sources */,
+				046122BD27BE4BE3003C93C1 /* LDTableViewCell.m in Sources */,
 				0461228C27BDEE34003C93C1 /* AppDelegate.m in Sources */,
+				046122BA27BE28E8003C93C1 /* LDDataManager.m in Sources */,
 				046122AC27BDF37C003C93C1 /* LDRootViewController.m in Sources */,
 				0461229D27BDEE36003C93C1 /* main.m in Sources */,
 				0461228F27BDEE34003C93C1 /* SceneDelegate.m in Sources */,
+				046122B727BE1D18003C93C1 /* LDUDPManager.m in Sources */,
+				046122B027BE1ABA003C93C1 /* LDServerModel.m in Sources */,
 				046122A927BDF1F5003C93C1 /* LDNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

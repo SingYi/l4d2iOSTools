@@ -6,6 +6,8 @@
 //
 
 #import "LDRootViewController.h"
+#import "LDTableViewCell.h"
+#import "LDDataManager.h"
 #import <Masonry.h>
 
 @interface LDRootViewController ()
@@ -16,12 +18,15 @@ UITableViewDataSource>
 @property(strong, nonatomic) UICollectionView *collectionView;
 
 
+@property(strong, nonatomic) NSArray *serverArray;
+
 @end
 
 @implementation LDRootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initDataSource];
     [self initView];
 }
 
@@ -36,21 +41,42 @@ UITableViewDataSource>
     }];
 }
 
+- (void)initDataSource {
+    [[LDDataManager instance] setRefreshBlock:^{
+        NSLog(@"刷新界面?");
+        [self.tableView reloadData];
+    }];
+}
+
+- (void)refreshData {
+
+}
+
 #pragma mark - table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [LDDataManager instance].serverInfo.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"l4d2TableCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"l4d2TableCell"];
-    }
+    LDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LDTableViewCell class]) forIndexPath:indexPath];
+
+    LDServerModel *model = [LDDataManager instance].serverInfo[indexPath.row];
+    model.tableView = tableView;
+    model.indexPath = indexPath;
+    
+    cell.model = [LDDataManager instance].serverInfo[indexPath.row];
+
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat s_width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = s_width / 16 * 9;
+    return height;
 }
 
 #pragma mark - getter
@@ -59,6 +85,9 @@ UITableViewDataSource>
         _tableView = [[UITableView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        [_tableView registerClass:[LDTableViewCell class] forCellReuseIdentifier:NSStringFromClass([LDTableViewCell class])];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
     }
     return _tableView;
 }
