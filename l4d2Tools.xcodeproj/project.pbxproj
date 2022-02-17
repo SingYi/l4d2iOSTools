@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0461228C27BDEE34003C93C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461228B27BDEE34003C93C1 /* AppDelegate.m */; };
+		0461228F27BDEE34003C93C1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461228E27BDEE34003C93C1 /* SceneDelegate.m */; };
+		0461229227BDEE34003C93C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461229127BDEE34003C93C1 /* ViewController.m */; };
+		0461229527BDEE34003C93C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461229327BDEE34003C93C1 /* Main.storyboard */; };
+		0461229727BDEE36003C93C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461229627BDEE36003C93C1 /* Assets.xcassets */; };
+		0461229A27BDEE36003C93C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461229827BDEE36003C93C1 /* LaunchScreen.storyboard */; };
+		0461229D27BDEE36003C93C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461229C27BDEE36003C93C1 /* main.m */; };
+		93B086A3E9A9C4E1698DAD39 /* Pods_l4d2Tools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0461228727BDEE34003C93C1 /* l4d2Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = l4d2Tools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0461228A27BDEE34003C93C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0461228B27BDEE34003C93C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0461228D27BDEE34003C93C1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		0461228E27BDEE34003C93C1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		0461229027BDEE34003C93C1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0461229127BDEE34003C93C1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0461229427BDEE34003C93C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0461229627BDEE36003C93C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0461229927BDEE36003C93C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0461229B27BDEE36003C93C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0461229C27BDEE36003C93C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_l4d2Tools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		785D581EE18CEA5CF8BCFB33 /* Pods-l4d2Tools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-l4d2Tools.release.xcconfig"; path = "Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools.release.xcconfig"; sourceTree = "<group>"; };
+		D9CB15B88F13258F46D289F0 /* Pods-l4d2Tools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-l4d2Tools.debug.xcconfig"; path = "Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0461228427BDEE34003C93C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B086A3E9A9C4E1698DAD39 /* Pods_l4d2Tools.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0461227E27BDEE34003C93C1 = {
+			isa = PBXGroup;
+			children = (
+				0461228927BDEE34003C93C1 /* l4d2Tools */,
+				0461228827BDEE34003C93C1 /* Products */,
+				C85F7825969E60D2A6F69CD1 /* Pods */,
+				35033B8C4DF9050939481855 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0461228827BDEE34003C93C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0461228727BDEE34003C93C1 /* l4d2Tools.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0461228927BDEE34003C93C1 /* l4d2Tools */ = {
+			isa = PBXGroup;
+			children = (
+				046122A427BDEF87003C93C1 /* Resources */,
+				046122A327BDEF45003C93C1 /* Main */,
+				0461229027BDEE34003C93C1 /* ViewController.h */,
+				0461229127BDEE34003C93C1 /* ViewController.m */,
+				0461229B27BDEE36003C93C1 /* Info.plist */,
+			);
+			path = l4d2Tools;
+			sourceTree = "<group>";
+		};
+		046122A327BDEF45003C93C1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0461229C27BDEE36003C93C1 /* main.m */,
+				0461228A27BDEE34003C93C1 /* AppDelegate.h */,
+				0461228B27BDEE34003C93C1 /* AppDelegate.m */,
+				0461228D27BDEE34003C93C1 /* SceneDelegate.h */,
+				0461228E27BDEE34003C93C1 /* SceneDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		046122A427BDEF87003C93C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0461229627BDEE36003C93C1 /* Assets.xcassets */,
+				0461229327BDEE34003C93C1 /* Main.storyboard */,
+				0461229827BDEE36003C93C1 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		35033B8C4DF9050939481855 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C85F7825969E60D2A6F69CD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9CB15B88F13258F46D289F0 /* Pods-l4d2Tools.debug.xcconfig */,
+				785D581EE18CEA5CF8BCFB33 /* Pods-l4d2Tools.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0461228627BDEE34003C93C1 /* l4d2Tools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046122A027BDEE36003C93C1 /* Build configuration list for PBXNativeTarget "l4d2Tools" */;
+			buildPhases = (
+				10DE615BD7BDF2004B57F734 /* [CP] Check Pods Manifest.lock */,
+				0461228327BDEE34003C93C1 /* Sources */,
+				0461228427BDEE34003C93C1 /* Frameworks */,
+				0461228527BDEE34003C93C1 /* Resources */,
+				63CDD1A80332F4FB0C158EA9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = l4d2Tools;
+			productName = l4d2Tools;
+			productReference = 0461228727BDEE34003C93C1 /* l4d2Tools.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0461227F27BDEE34003C93C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					0461228627BDEE34003C93C1 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 0461228227BDEE34003C93C1 /* Build configuration list for PBXProject "l4d2Tools" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0461227E27BDEE34003C93C1;
+			productRefGroup = 0461228827BDEE34003C93C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0461228627BDEE34003C93C1 /* l4d2Tools */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0461228527BDEE34003C93C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0461229A27BDEE36003C93C1 /* LaunchScreen.storyboard in Resources */,
+				0461229727BDEE36003C93C1 /* Assets.xcassets in Resources */,
+				0461229527BDEE34003C93C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10DE615BD7BDF2004B57F734 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-l4d2Tools-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63CDD1A80332F4FB0C158EA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0461228327BDEE34003C93C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0461229227BDEE34003C93C1 /* ViewController.m in Sources */,
+				0461228C27BDEE34003C93C1 /* AppDelegate.m in Sources */,
+				0461229D27BDEE36003C93C1 /* main.m in Sources */,
+				0461228F27BDEE34003C93C1 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0461229327BDEE34003C93C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0461229427BDEE34003C93C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0461229827BDEE36003C93C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0461229927BDEE36003C93C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0461229E27BDEE36003C93C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0461229F27BDEE36003C93C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		046122A127BDEE36003C93C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9CB15B88F13258F46D289F0 /* Pods-l4d2Tools.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JR27SLBFXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = l4d2Tools/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sans.l4d2Tools;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		046122A227BDEE36003C93C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 785D581EE18CEA5CF8BCFB33 /* Pods-l4d2Tools.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JR27SLBFXN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = l4d2Tools/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sans.l4d2Tools;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0461228227BDEE34003C93C1 /* Build configuration list for PBXProject "l4d2Tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0461229E27BDEE36003C93C1 /* Debug */,
+				0461229F27BDEE36003C93C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046122A027BDEE36003C93C1 /* Build configuration list for PBXNativeTarget "l4d2Tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046122A127BDEE36003C93C1 /* Debug */,
+				046122A227BDEE36003C93C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0461227F27BDEE34003C93C1 /* Project object */;
+}
