@@ -90,7 +90,7 @@
 }
 
 - (void)doIp {
-    self.ipLabel.text = [NSString stringWithFormat:@"地址: %@:%@",self.model.ip,self.model.port];
+    self.ipLabel.text = [NSString stringWithFormat:@"%@:%@",self.model.ip,self.model.port];
 }
 
 - (void)doMap {
@@ -126,6 +126,7 @@
     [self.ipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).with.offset(4);
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_centerX);
     }];
     [self doIp];
     

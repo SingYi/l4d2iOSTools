@@ -40,6 +40,8 @@ static LDDataManager *_private_data_manager = nil;
         [_cacheDict setObject:model forKey:ip];
         
         NSArray *s = [ip componentsSeparatedByString:@":"];
+        model.ip = s.firstObject;
+        model.port = s.lastObject;
 //        NSLog(@"server = %@",s);
         [[LDUDPManager Instance] getServerInfoServer:s[0] Port:s[1] Callback:^(NSString * _Nonnull server, NSString * _Nonnull port, NSData *data) {
             // 处理服务器数据
