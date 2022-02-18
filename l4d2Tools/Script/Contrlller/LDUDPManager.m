@@ -79,8 +79,8 @@ static LDUDPManager *_private_udp_manager = nil;
     NSString *identifier = [NSString stringWithFormat:@"%@:%d",ip,port];
     // 继续来等待接收下一次消息
     const struct UDPResponseData *response = [data bytes];
-//    NSLog(@"收到服务端的响应 [%@]", identifier);
-//    NSLog(@"收到服务端的响应 header [%x]", response->header);
+    NSLog(@"收到服务端的响应 [%@]", identifier);
+    NSLog(@"收到服务端的响应 header [%x]", response->header);
     switch (response->header) {
         case 0x41: {
             NSMutableData *queryData = [self queryServerData];
@@ -100,7 +100,7 @@ static LDUDPManager *_private_udp_manager = nil;
             break;
         }
         case 0x44: {
-            // server info
+            // player info
             if ([self.playerCallback valueForKey:identifier] != nil) {
                 GetInfoCallback callback = self.playerCallback[identifier];
                 callback(ip, [NSString stringWithFormat:@"%d",port], data);
