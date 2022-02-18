@@ -18,10 +18,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(strong, nonatomic) NSString *ip;
 @property(strong, nonatomic) NSString *port;
+
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) NSString *map;
-@property(assign, nonatomic) int maxPlayer;
-@property(assign, nonatomic) int currentPlayer;
+@property(strong, nonatomic) NSString *serverFolder;
+@property(strong, nonatomic) NSString *gameName;
+
+@property(assign, nonatomic) short appId;
+@property(assign, nonatomic) Byte currentPlayer;
+@property(assign, nonatomic) Byte maxPlayer;
+@property(assign, nonatomic) Byte botsCount;
+@property(assign, nonatomic) Byte serverType;
+@property(assign, nonatomic) Byte environment;
+@property(assign, nonatomic) Byte visibility;
+@property(assign, nonatomic) Byte vac;
+
 
 @property(strong, nonatomic) NSMutableArray<LDPlayerModel *> *playerInfo;
 

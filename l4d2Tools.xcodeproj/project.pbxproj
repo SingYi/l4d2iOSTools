@@ -20,6 +20,7 @@
 		046122B727BE1D18003C93C1 /* LDUDPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122B627BE1D17003C93C1 /* LDUDPManager.m */; };
 		046122BA27BE28E8003C93C1 /* LDDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122B927BE28E8003C93C1 /* LDDataManager.m */; };
 		046122BD27BE4BE3003C93C1 /* LDTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122BC27BE4BE3003C93C1 /* LDTableViewCell.m */; };
+		046122C027BF412D003C93C1 /* LDByteBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 046122BF27BF412D003C93C1 /* LDByteBuffer.m */; };
 		93B086A3E9A9C4E1698DAD39 /* Pods_l4d2Tools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		046122B927BE28E8003C93C1 /* LDDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDDataManager.m; sourceTree = "<group>"; };
 		046122BB27BE4BE3003C93C1 /* LDTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDTableViewCell.h; sourceTree = "<group>"; };
 		046122BC27BE4BE3003C93C1 /* LDTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDTableViewCell.m; sourceTree = "<group>"; };
+		046122BE27BF412D003C93C1 /* LDByteBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LDByteBuffer.h; sourceTree = "<group>"; };
+		046122BF27BF412D003C93C1 /* LDByteBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LDByteBuffer.m; sourceTree = "<group>"; };
 		1CF17E49D10267A5171C38C6 /* Pods_l4d2Tools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_l4d2Tools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		785D581EE18CEA5CF8BCFB33 /* Pods-l4d2Tools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-l4d2Tools.release.xcconfig"; path = "Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools.release.xcconfig"; sourceTree = "<group>"; };
 		D9CB15B88F13258F46D289F0 /* Pods-l4d2Tools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-l4d2Tools.debug.xcconfig"; path = "Target Support Files/Pods-l4d2Tools/Pods-l4d2Tools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				046122B227BE1B3C003C93C1 /* LDPlayerModel.m */,
 				046122B827BE28E8003C93C1 /* LDDataManager.h */,
 				046122B927BE28E8003C93C1 /* LDDataManager.m */,
+				046122BE27BF412D003C93C1 /* LDByteBuffer.h */,
+				046122BF27BF412D003C93C1 /* LDByteBuffer.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				046122B727BE1D18003C93C1 /* LDUDPManager.m in Sources */,
 				046122B027BE1ABA003C93C1 /* LDServerModel.m in Sources */,
 				046122A927BDF1F5003C93C1 /* LDNavigationController.m in Sources */,
+				046122C027BF412D003C93C1 /* LDByteBuffer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

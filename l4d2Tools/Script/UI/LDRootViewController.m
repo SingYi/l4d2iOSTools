@@ -14,8 +14,8 @@
 <UITableViewDelegate,
 UITableViewDataSource>
 
-@property(strong, nonatomic) UITableView *tableView;
-@property(strong, nonatomic) UICollectionView *collectionView;
+@property(strong, nonatomic) UITableView        *tableView;
+@property(strong, nonatomic) UICollectionView   *collectionView;
 
 
 @property(strong, nonatomic) NSArray *serverArray;
@@ -43,7 +43,6 @@ UITableViewDataSource>
 
 - (void)initDataSource {
     [[LDDataManager instance] setRefreshBlock:^{
-        NSLog(@"刷新界面?");
         [self.tableView reloadData];
     }];
 }
@@ -73,10 +72,14 @@ UITableViewDataSource>
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat s_width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = s_width / 16 * 9;
-    return height;
+    return height + 10;
 }
 
 #pragma mark - getter

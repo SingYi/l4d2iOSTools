@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(assign, nonatomic) Byte index;
 @property(strong, nonatomic) NSString *name;
-@property(assign, nonatomic) long score;
+@property(assign, nonatomic) int score;
 @property(assign, nonatomic) float duration;
 
 @end

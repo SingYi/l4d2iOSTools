@@ -16,6 +16,10 @@
 @property(strong, nonatomic) UILabel            *nameLabel;
 @property(strong, nonatomic) UILabel            *ipLabel;
 @property(strong, nonatomic) UILabel            *mapLabel;
+@property(strong, nonatomic) UILabel            *playerNumberLabel;
+@property(strong, nonatomic) UILabel            *vacLabel;
+
+@property(strong, nonatomic) NSArray<UILabel *> *playerArray;
 
 @end
 
@@ -53,33 +57,36 @@
 #pragma mark - method
 - (void)doImageView {
     NSString *mapName = @"ThirdParty";
-    if ([self.model.map hasPrefix:@"c1"]) {
+    NSArray<NSString *> *tmpArray = [self.model.map componentsSeparatedByString:@"_"];
+    tmpArray = [tmpArray.firstObject componentsSeparatedByString:@"m"];
+    NSString *map = tmpArray.firstObject;
+    if ([map isEqualToString:@"c1"]) {
         mapName = @"DeadCenter";
-    } else if ([self.model.map hasPrefix:@"c2"]) {
+    } else if ([map isEqualToString:@"c2"]) {
         mapName = @"DarkCarnival";
-    } else if ([self.model.map hasPrefix:@"c3"]) {
+    } else if ([map isEqualToString:@"c3"]) {
         mapName = @"SwampFever";
-    } else if ([self.model.map hasPrefix:@"c4"]) {
+    } else if ([map isEqualToString:@"c4"]) {
         mapName = @"HardRain";
-    } else if ([self.model.map hasPrefix:@"c5"]) {
+    } else if ([map isEqualToString:@"c5"]) {
         mapName = @"TheParish";
-    } else if ([self.model.map hasPrefix:@"c6"]) {
+    } else if ([map isEqualToString:@"c6"]) {
         mapName = @"ThePassing";
-    } else if ([self.model.map hasPrefix:@"c7"]) {
+    } else if ([map isEqualToString:@"c7"]) {
         mapName = @"TheSacrifice";
-    } else if ([self.model.map hasPrefix:@"c8"]) {
+    } else if ([map isEqualToString:@"c8"]) {
         mapName = @"NoMercy";
-    } else if ([self.model.map hasPrefix:@"c9"]) {
+    } else if ([map isEqualToString:@"c9"]) {
         mapName = @"CrashCourse";
-    } else if ([self.model.map hasPrefix:@"c10"]) {
+    } else if ([map isEqualToString:@"c10"]) {
         mapName = @"DeathToll";
-    } else if ([self.model.map hasPrefix:@"c11"]) {
+    } else if ([map isEqualToString:@"c11"]) {
         mapName = @"DeadAir";
-    } else if ([self.model.map hasPrefix:@"c12"]) {
+    } else if ([map isEqualToString:@"c12"]) {
         mapName = @"BloodHarvest";
-    } else if ([self.model.map hasPrefix:@"c13"]) {
+    } else if ([map isEqualToString:@"c13"]) {
         mapName = @"ColdStream";
-    } else if ([self.model.map hasPrefix:@"c14"]) {
+    } else if ([map isEqualToString:@"c14"]) {
         mapName = @"ThirdParty";
     }
     self.imageView.image = [UIImage imageNamed:mapName];
@@ -95,6 +102,28 @@
 
 - (void)doMap {
     self.mapLabel.text = [NSString stringWithFormat:@"地图: %@",self.model.map];
+}
+
+- (void)doPlayer {
+    int i = 0;
+    for (; i < self.model.playerInfo.count; i++) {
+        UILabel *label = self.playerArray[i];
+        LDPlayerModel *player = self.model.playerInfo[i];
+        label.text = player.name;
+    }
+    
+    for (; i < self.playerArray.count; i++) {
+        UILabel *label = self.playerArray[i];
+        label.text = @"";
+    }
+}
+
+- (void)doPlayerNumber {
+    self.playerNumberLabel.text = [NSString stringWithFormat:@"当前玩家: %d/%d",self.model.currentPlayer, self.model.maxPlayer];
+}
+
+- (void)doVac {
+    self.vacLabel.text = [NSString stringWithFormat:@"是否开启 VAC: %@", self.model.vac == 1 ? @"是" : @"否"];
 }
 
 #pragma mark - setter
@@ -138,6 +167,36 @@
         make.right.equalTo(self.contentView.mas_centerX);
     }];
     [self doMap];
+    
+    // 玩家数量
+    [self.contentView addSubview:self.playerNumberLabel];
+    [self.playerNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mapLabel.mas_bottom).with.offset(4);
+        make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_centerX);
+    }];
+    [self doPlayerNumber];
+    
+    // 是否开启 Vac
+    [self.contentView addSubview:self.vacLabel];
+    [self.vacLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.playerNumberLabel.mas_bottom).with.offset(4);
+        make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_centerX);
+    }];
+    [self doVac];
+    
+    UILabel *last = self.nameLabel;
+    for (UILabel *label in self.playerArray) {
+        [self.contentView addSubview:label];
+        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_centerX).with.offset(10);
+            make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+            make.top.equalTo(last.mas_bottom).with.offset(2);
+        }];
+        last = label;
+    }
+    [self doPlayer];
 }
 
 #pragma mark - getter
@@ -169,6 +228,24 @@
     return _mapLabel;
 }
 
+- (UILabel *)playerNumberLabel {
+    if (!_playerNumberLabel) {
+        _playerNumberLabel = [[UILabel alloc] init];
+        _playerNumberLabel.textColor = [UIColor whiteColor];
+        _playerNumberLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _playerNumberLabel;
+}
+
+- (UILabel *)vacLabel {
+    if (!_vacLabel) {
+        _vacLabel = [[UILabel alloc] init];
+        _vacLabel.textColor = [UIColor whiteColor];
+        _vacLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _vacLabel;
+}
+
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] init];
@@ -183,6 +260,20 @@
         _visualEffectView.alpha = 0.8;
     }
     return _visualEffectView;
+}
+
+- (NSArray<UILabel *> *)playerArray {
+    if (!_playerArray) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i < 8; i++) {
+            UILabel *label = [[UILabel alloc] init];
+            label.textColor = [UIColor whiteColor];
+            label.textAlignment = NSTextAlignmentLeft;
+            [array addObject:label];
+        }
+        _playerArray = array;
+    }
+    return _playerArray;
 }
 
 @end
