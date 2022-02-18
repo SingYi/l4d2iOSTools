@@ -26,30 +26,6 @@
 
 @implementation LDTableViewCell
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        NSLog(@"%s",__func__);
-    }
-    return self;
-}
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        NSLog(@"%s",__func__);
-    }
-    return self;
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-    NSLog(@"%s",__func__);
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
@@ -93,7 +69,7 @@
 }
 
 - (void)doName {
-    self.nameLabel.text = self.model.name;
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", self.model.name];
 }
 
 - (void)doIp {

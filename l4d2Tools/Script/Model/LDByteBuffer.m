@@ -8,10 +8,10 @@
 #import "LDByteBuffer.h"
 
 @interface LDByteBuffer () {
-    Byte *_originData;
+    Byte _a[1024];
 }
 
-//@property(assign, nonatomic) const Byte *originData;
+@property(assign, nonatomic) Byte *originData;
 
 @end
 
@@ -85,14 +85,24 @@
     Byte tmp = 255;
     Byte a[1024] = {};
     int index = 0;
-    do {
-        tmp = [self readBtye];
-        a[index] = tmp;
-        index++;
-    } while (tmp != '\0');
-    NSData *data = [NSData dataWithBytes:a length:index];
-    NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    return result;
+    @try {
+        do {
+            tmp = [self readBtye];
+            a[index] = tmp;
+            index++;
+        } while (tmp != '\0');
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+    if (a[0] != 0) {
+        NSData *data = [NSData dataWithBytes:a length:index];
+        NSString *result = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] mutableCopy];
+        return [result mutableCopy];
+    }
+
+    return @"";
 }
 
 @end

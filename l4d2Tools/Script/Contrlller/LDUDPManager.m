@@ -39,14 +39,16 @@ static LDUDPManager *_private_udp_manager = nil;
 
 
 - (void)initUdpClient {
-    NSLog(@"upd client init");
-    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+//    NSLog(@"upd client init");
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:queue];
     NSError * error = nil;
     [self.client bindToPort:22222 error:&error];
     if (error) {//监听错误打印错误信息
         NSLog(@"error:%@",error);
     }else {//监听成功则开始接收信息
-        NSLog(@"监听成功!");
+//        NSLog(@"监听成功!");
         [self.client beginReceiving:&error];
     }
 }
@@ -54,17 +56,16 @@ static LDUDPManager *_private_udp_manager = nil;
 
 #pragma mark - method
 - (void)getServerInfoServer:(NSString *)ip Port:(NSString *)port Callback:(GetInfoCallback)callback {
-    NSLog(@"send udp get server info ip = %@ prot = %@",ip, port);
+//    NSLog(@"send udp get server info ip = %@ prot = %@",ip, port);
     [self.client sendData:[self queryServerData] toHost:ip port:[port intValue] withTimeout:-1 tag:0];
     [self.serverCallback setObject:callback forKey:[NSString stringWithFormat:@"%@:%@",ip, port]];
 }
 
 - (void)getPlayerInfoServer:(NSString *)ip Port:(NSString *)port Callback:(GetInfoCallback)callback {
-    NSLog(@"send udp get player info ip = %@ prot = %@",ip, port);
+//    NSLog(@"send udp get player info ip = %@ prot = %@",ip, port);
     NSMutableData *queryData = [self queryPlayerData];
     Byte tmp[4] = {0xff, 0xff, 0xff, 0xff};
     [queryData appendBytes:tmp length:4];
-    NSLog(@"send == %@",queryData);
     [self.client sendData:queryData toHost:ip port:[port intValue] withTimeout:-1 tag:0];
     [self.playerCallback setObject:callback forKey:[NSString stringWithFormat:@"%@:%@",ip, port]];
 }
@@ -77,9 +78,9 @@ static LDUDPManager *_private_udp_manager = nil;
     uint16_t port = [GCDAsyncUdpSocket portFromAddress:address];
     NSString *identifier = [NSString stringWithFormat:@"%@:%d",ip,port];
     // 继续来等待接收下一次消息
-    NSLog(@"收到服务端的响应 [%@]", identifier);
     const struct UDPResponseData *response = [data bytes];
-    NSLog(@"收到服务端的响应 header [%x]", response->header);
+//    NSLog(@"收到服务端的响应 [%@]", identifier);
+//    NSLog(@"收到服务端的响应 header [%x]", response->header);
     switch (response->header) {
         case 0x41: {
             NSMutableData *queryData = [self queryServerData];

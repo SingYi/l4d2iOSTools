@@ -19,13 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSLog(@"%s", __func__);
-    
-     
+
     UINavigationBarAppearance *barApperance = [[UINavigationBarAppearance alloc] init];
     barApperance.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
-//    barApperance.
     [UINavigationBar appearance].standardAppearance = barApperance;
 }
 

@@ -39,6 +39,10 @@ UITableViewDataSource>
         make.right.equalTo(self.view.mas_right).with.offset(0);
         make.bottom.equalTo(self.view.mas_bottom).with.offset(0);
     }];
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd) target:self action:@selector(responseAddButton)];
+    [leftItem setTintColor:[UIColor whiteColor]];
+    self.navigationItem.leftBarButtonItem = leftItem;
 }
 
 - (void)initDataSource {
@@ -48,6 +52,36 @@ UITableViewDataSource>
 }
 
 - (void)refreshData {
+
+}
+
+- (void)responseAddButton {
+//    NSLog(@"点击添加按钮!");
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"添加服务器"
+                                                                             message:@"请输入服务器地址与端口"
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *ip = alertController.textFields.firstObject;
+        UITextField *port = alertController.textFields[1];
+        NSLog(@"[%@:%@]",ip.text, port.text);
+        [[LDDataManager instance] addServer:ip.text Port:port.text];
+        [self.tableView reloadData];
+    }]];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入服务器地址";
+    }];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入端口";
+        textField.text = @"27015";
+    }];
+
+    [self presentViewController:alertController animated:YES completion:nil];
 
 }
 
@@ -74,12 +108,45 @@ UITableViewDataSource>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"手动刷新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        LDServerModel *model = [LDDataManager instance].serverInfo[indexPath.row];
+        [model update];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"向上移动" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[LDDataManager instance] dataUp:indexPath.row];
+        [self.tableView reloadData];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"向下移动" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[LDDataManager instance] dataDown:indexPath.row];
+        [self.tableView reloadData];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"删除服务器" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        LDServerModel *model = [LDDataManager instance].serverInfo[indexPath.row];
+        [[LDDataManager instance] removeServerWithModel:model];
+        [self.tableView reloadData];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat s_width = [UIScreen mainScreen].bounds.size.width;
-    CGFloat height = s_width / 16 * 9;
-    return height + 10;
+//    CGFloat s_width = [UIScreen mainScreen].bounds.size.width;
+//    CGFloat height = s_width / 16 * 9;
+//    NSLog(@"height = %f",height);
+    return 220;
 }
 
 #pragma mark - getter

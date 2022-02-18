@@ -19,6 +19,14 @@ typedef void(^Refresh)(void);
 
 + (LDDataManager *)instance;
 
+- (void)addServer:(NSString *)ip Port:(NSString *)port;
+- (void)removeServer:(NSString *)value;
+- (void)removeServerWithModel:(LDServerModel *)value;
+
+- (void)dataUp:(NSUInteger)index;
+- (void)dataDown:(NSUInteger)index;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
