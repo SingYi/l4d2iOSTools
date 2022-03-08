@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setServerIpAndPort:(NSString *)ipAndPort;
 
-- (void)update;
+- (void)updateWithIndex:(int)index;
 
 @end
 

@@ -105,9 +105,15 @@ static NSString * const _serverListKey = @"com.sans.serverList";
     if (self.serverInfo == nil) {
         return;
     }
-    for (LDServerModel *model in self.serverInfo) {
-        [model update];
+//    for (LDServerModel *model in self.serverInfo) {
+//        [model update];
+//    }
+    
+    for (int i = 0 ; i < self.serverInfo.count; i++) {
+        LDServerModel *model = self.serverInfo[i];
+        [model updateWithIndex:i];
     }
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
         if (self.refreshBlock) {
             self.refreshBlock();
@@ -130,7 +136,7 @@ static NSString * const _serverListKey = @"com.sans.serverList";
     NSArray *s = [ip componentsSeparatedByString:@":"];
     model.ip = s.firstObject;
     model.port = s.lastObject;
-    [model update];
+    [model updateWithIndex:0];
     [self.serverInfo addObject:model];
 }
 

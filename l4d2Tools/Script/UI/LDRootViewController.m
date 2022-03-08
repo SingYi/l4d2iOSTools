@@ -114,7 +114,7 @@ UITableViewDataSource>
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"手动刷新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         LDServerModel *model = [LDDataManager instance].serverInfo[indexPath.row];
-        [model update];
+        [model updateWithIndex:indexPath.row];
     }]];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"向上移动" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -158,6 +158,11 @@ UITableViewDataSource>
         [_tableView registerClass:[LDTableViewCell class] forCellReuseIdentifier:NSStringFromClass([LDTableViewCell class])];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+        
+        // 这里需要配置预估高度,否则刷新时,cell 会上下乱跳
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        _tableView.estimatedRowHeight = 220;
     }
     return _tableView;
 }

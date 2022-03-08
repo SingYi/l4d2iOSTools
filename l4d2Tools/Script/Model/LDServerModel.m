@@ -21,7 +21,7 @@
     self.port = tmp[1];
 }
 
-- (void)update {
+- (void)updateWithIndex:(int)index {
     if (self.ip == nil || self.port == nil) {
         return;
     }
