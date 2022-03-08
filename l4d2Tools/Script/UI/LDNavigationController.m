@@ -20,9 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UINavigationBarAppearance *barApperance = [[UINavigationBarAppearance alloc] init];
-    barApperance.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
-    [UINavigationBar appearance].standardAppearance = barApperance;
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *barApperance = [[UINavigationBarAppearance alloc] init];
+        barApperance.backgroundColor = [UIColor colorWithWhite:0.1 alpha:1];
+        [UINavigationBar appearance].standardAppearance = barApperance;
+    } else {
+        self.navigationBar.barTintColor = [UIColor colorWithWhite:0.1 alpha:1];
+    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

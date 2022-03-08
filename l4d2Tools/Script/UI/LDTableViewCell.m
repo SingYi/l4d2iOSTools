@@ -106,19 +106,23 @@
 - (void)setModel:(LDServerModel *)model {
     _model = model;
     // 背景图片 16 比 9
-    [self.contentView addSubview:self.imageView];
+    [self addSubview:self.imageView];
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView);
+//        make.edges.equalTo(self.contentView);
+        make.top.equalTo(self.contentView.mas_top);
+        make.bottom.equalTo(self.contentView.mas_bottom);
+        make.width.equalTo(self.mas_width);
+        make.left.equalTo(self.mas_left);
     }];
     
-    [self.contentView addSubview:self.visualEffectView];
+    [self addSubview:self.visualEffectView];
     [self.visualEffectView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
     }];
     [self doImageView];
     
     // 服务器名称
-    [self.contentView addSubview:self.nameLabel];
+    [self addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView.mas_top).with.offset(10);
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
@@ -127,7 +131,7 @@
     [self doName];
     
     // 服务器地址
-    [self.contentView addSubview:self.ipLabel];
+    [self addSubview:self.ipLabel];
     [self.ipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).with.offset(4);
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
@@ -136,7 +140,7 @@
     [self doIp];
     
     // 地图
-    [self.contentView addSubview:self.mapLabel];
+    [self addSubview:self.mapLabel];
     [self.mapLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.ipLabel.mas_bottom).with.offset(4);
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
@@ -145,7 +149,7 @@
     [self doMap];
     
     // 玩家数量
-    [self.contentView addSubview:self.playerNumberLabel];
+    [self addSubview:self.playerNumberLabel];
     [self.playerNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.mapLabel.mas_bottom).with.offset(4);
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
@@ -154,7 +158,7 @@
     [self doPlayerNumber];
     
     // 是否开启 Vac
-    [self.contentView addSubview:self.vacLabel];
+    [self addSubview:self.vacLabel];
     [self.vacLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.playerNumberLabel.mas_bottom).with.offset(4);
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
@@ -164,7 +168,7 @@
     
     UILabel *last = self.nameLabel;
     for (UILabel *label in self.playerArray) {
-        [self.contentView addSubview:label];
+        [self addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_centerX).with.offset(10);
             make.right.equalTo(self.contentView.mas_right).with.offset(-10);
