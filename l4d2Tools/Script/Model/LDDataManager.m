@@ -81,7 +81,7 @@ static NSString * const _serverListKey = @"com.sans.serverList";
       第三个参数:间隔时间 GCD里面的时间最小单位为 纳秒
       第四个参数:精准度(表示允许的误差,0表示绝对精准)
     */
-   dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 5.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+   dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 10.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
 
     //3.要调用的任务
    dispatch_source_set_event_handler(timer, ^{

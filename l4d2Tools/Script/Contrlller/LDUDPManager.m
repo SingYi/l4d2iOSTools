@@ -41,8 +41,8 @@ static LDUDPManager *_private_udp_manager = nil;
 - (void)initUdpClient {
 //    NSLog(@"upd client init");
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:queue];
+    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+//    self.client = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:queue];
     NSError * error = nil;
     [self.client bindToPort:22222 error:&error];
     if (error) {//监听错误打印错误信息
@@ -80,7 +80,7 @@ static LDUDPManager *_private_udp_manager = nil;
     // 继续来等待接收下一次消息
     const struct UDPResponseData *response = [data bytes];
     NSLog(@"收到服务端的响应 [%@]", identifier);
-    NSLog(@"收到服务端的响应 header [%x]", response->header);
+//    NSLog(@"收到服务端的响应 header [%x]", response->header);
     switch (response->header) {
         case 0x41: {
             NSMutableData *queryData = [self queryServerData];

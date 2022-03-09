@@ -38,9 +38,9 @@
         LDByteBuffer *buffer = [[LDByteBuffer alloc] initWithByte:a];
         
 //        dispatch_async(dispatch_get_main_queue(), ^{
-            self.name = [NSString stringWithFormat:@"%@",[buffer readString]];
-            self.map = [NSString stringWithFormat:@"%@",[buffer readString]];
-        NSLog(@"name == %@",self.name);
+        self->_name = [NSString stringWithFormat:@"%@",[buffer readString]];
+        self->_map = [NSString stringWithFormat:@"%@",[buffer readString]];
+//        NSLog(@"name == %@",self.name);
 //        [buffer readString];
 //        [buffer readString];
         [buffer readString];
