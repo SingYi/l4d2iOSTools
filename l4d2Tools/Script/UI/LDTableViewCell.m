@@ -65,7 +65,7 @@
     } else if ([map isEqualToString:@"c14"]) {
         mapName = @"ThirdParty";
     }
-    self.imageView.image = [UIImage imageNamed:mapName];
+    self.backgroundImageView.image = [UIImage imageNamed:mapName];
 }
 
 - (void)doName {
@@ -106,11 +106,11 @@
 - (void)setModel:(LDServerModel *)model {
     _model = model;
     // 背景图片 16 比 9
-    [self addSubview:self.imageView];
-    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self addSubview:self.backgroundImageView];
+    [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.contentView);
-        make.top.equalTo(self.contentView.mas_top);
-        make.bottom.equalTo(self.contentView.mas_bottom);
+        make.top.equalTo(self.mas_top);
+        make.bottom.equalTo(self.mas_bottom);
         make.width.equalTo(self.mas_width);
         make.left.equalTo(self.mas_left);
     }];
