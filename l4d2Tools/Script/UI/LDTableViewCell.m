@@ -27,6 +27,7 @@
 @implementation LDTableViewCell
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     [super setSelected:selected animated:animated];
 }
 

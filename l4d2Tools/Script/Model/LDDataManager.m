@@ -63,8 +63,8 @@ static NSString * const _serverListKey = @"com.sans.serverList";
 
 - (void)initTimer {
     //0.创建队列
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-//    dispatch_queue_t queue = dispatch_get_main_queue();
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t queue = dispatch_get_main_queue();
     //1.创建GCD中的定时器
     /*
       第一个参数:创建source的类型 DISPATCH_SOURCE_TYPE_TIMER:定时器
@@ -105,13 +105,8 @@ static NSString * const _serverListKey = @"com.sans.serverList";
     if (self.serverInfo == nil) {
         return;
     }
-//    for (LDServerModel *model in self.serverInfo) {
-//        [model update];
-//    }
-    
-    for (int i = 0 ; i < self.serverInfo.count; i++) {
-        LDServerModel *model = self.serverInfo[i];
-        [model updateWithIndex:i];
+    for (LDServerModel *model in self.serverInfo) {
+        [model update];
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
@@ -136,7 +131,7 @@ static NSString * const _serverListKey = @"com.sans.serverList";
     NSArray *s = [ip componentsSeparatedByString:@":"];
     model.ip = s.firstObject;
     model.port = s.lastObject;
-    [model updateWithIndex:0];
+    [model update];
     [self.serverInfo addObject:model];
 }
 
@@ -205,7 +200,6 @@ static NSString * const _serverListKey = @"com.sans.serverList";
         @"182.61.16.64:27015",      // 105
         @"106.54.173.248:27015",    // 106
         @"182.61.48.110:27015",     // 107
-        @"124.223.102.206:27015",
         @"101.43.219.42:27015",     // 109
         @"106.12.17.252:27015",     // 111
         @"175.24.115.22:27015",     // 118

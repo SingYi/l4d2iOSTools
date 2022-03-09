@@ -21,7 +21,7 @@
     self.port = tmp[1];
 }
 
-- (void)updateWithIndex:(int)index {
+- (void)update {
     if (self.ip == nil || self.port == nil) {
         return;
     }
@@ -96,8 +96,8 @@
             player.duration = [buffer readFloat];
 //                NSLog(@"玩家下标 = %d", index);
 //                NSLog(@"玩家 name  = %@", name);
-//                NSLog(@"玩家 score  = %d", score);
-//                NSLog(@"玩家 time  = %f", time);
+//                NSLog(@"玩家 score  = %d", player.score);
+//                NSLog(@"玩家 time  = %f", player.duration);
             [array addObject:player];
         }
         

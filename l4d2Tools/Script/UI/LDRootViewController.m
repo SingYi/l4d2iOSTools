@@ -114,7 +114,7 @@ UITableViewDataSource>
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"手动刷新" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         LDServerModel *model = [LDDataManager instance].serverInfo[indexPath.row];
-        [model updateWithIndex:indexPath.row];
+        [model update];
     }]];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"向上移动" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -136,7 +136,6 @@ UITableViewDataSource>
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
     }]];
-    
     [self presentViewController:alertController animated:YES completion:nil];
     
     
