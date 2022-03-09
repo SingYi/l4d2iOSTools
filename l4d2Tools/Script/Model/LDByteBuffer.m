@@ -98,8 +98,8 @@
     }
     if (a[0] != 0) {
         NSData *data = [NSData dataWithBytes:a length:index];
-        NSString *result = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] mutableCopy];
-        return [result mutableCopy];
+        NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        return result;
     }
 
     return @"";
